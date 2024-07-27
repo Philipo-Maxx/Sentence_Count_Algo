@@ -1,0 +1,35 @@
+ALGORITHM read_a_sentence
+VAR
+    sentence: STRING
+    sentence_length:INTEGER:=0
+    spaces_count: INTEGER:=0
+    word_count: INTEGER:=0
+    vowel_count: INTEGER:=0
+BEGIN
+    // Get sentence length
+    Read(sentence)
+    sentence_length= sentence.length
+
+    // Count the number of words
+
+    FOR i FROM 0 TO sentence.length-1 STEP 1 DO
+        IF (sentence[i]=" ") THEN
+            spaces_count:= spaces_count+1
+        END_IF
+    END_FOR
+        word_count:= spaces_count+1
+
+
+    FOR i FROM 0 TO sentence.length-1 STEP 1 DO
+        IF (sentence[i]="a" or sentence[i]="e" or sentence[i]="i" or sentence[i]="o" or sentence[i]="u" ) THEN
+            vowel_count:=vowel_count+1
+        END_IF
+
+    END_FOR
+
+
+    Write (sentence_length)
+    Write (word_count)
+    Write (vowel_count)
+
+END
